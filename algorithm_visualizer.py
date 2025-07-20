@@ -7,7 +7,7 @@ import copy
 
 # Page configuration
 st.set_page_config(
-    page_title="Algorithm Visualizer",
+    page_title="Sorting Visualizer",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -540,7 +540,7 @@ ALGORITHMS = {
 
 # Main title
 st.markdown(
-    '<h1 class="main-header">🔍 Algorithm Visualizer</h1>', unsafe_allow_html=True
+    '<h1 class="main-header">🔍 Sorting Visualizer</h1>', unsafe_allow_html=True
 )
 
 # Sidebar controls
