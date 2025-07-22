@@ -1,3 +1,8 @@
+#streamlit: main web app framework.
+#plotly.graph_objects & express: for plotting interactive bar charts.
+#time: used for animation delay (time.sleep()).
+#random: to generate random arrays.
+#copy: used to create deep copies of arrays
 import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
@@ -5,7 +10,7 @@ import time
 import random
 import copy
 
-# Page configuration
+#Set metadata and layout of the Streamlit app.
 st.set_page_config(
     page_title="Sorting Visualizer",
     page_icon="📊",
@@ -13,7 +18,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Custom CSS to make sidebar wider
+# Custom CSS, unsafe_allow_html=True to allow custom HTML/CSS, default is escaped
 st.markdown(
     """
 <style>
@@ -31,7 +36,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Custom CSS for better styling
+# Custom CSS
 st.markdown(
     """
 <style>
@@ -93,7 +98,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Initialize session state
+# Initialize session state - Check if each key is in st.session_state. If not, set a default value.
 if "array" not in st.session_state:
     st.session_state.array = [64, 34, 25, 12, 22, 11, 90]
 if "original_array" not in st.session_state:
@@ -498,7 +503,7 @@ def heap_sort_steps(arr):
     return steps
 
 
-# Algorithm information
+# Algorithm info
 ALGORITHMS = {
     "Bubble Sort": {
         "function": bubble_sort_steps,
